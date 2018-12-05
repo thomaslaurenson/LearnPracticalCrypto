@@ -25,3 +25,30 @@ A simple application that generates a random salt value, written in C# for use o
 ![Screenshot of the RandomSaltGenerator application](resources/RandomSaltGenerator.png)
 
 NOTE: The RandomSaltGenerator tool is specifically designed for learning purposes. Random number generation is achieved using the `RNGCryptoServiceProvider` class. After a lot of researching, I could not confirm that this implementation is FIPS compliant.
+
+## PasswordHashing
+
+A simple application that replicates an application login scenario, written in C# for use on Windows operating systems. The purpose of the tool is to introduce students to the general process of a password login system. When the application is run, the user is presented with a username and password text boxes. When a user enters in credentials and clicks the _Login_ button the entered credentials are comapred against a palintext file of valid users. 
+
+![Screenshot of the PasswordHashing application](resources/PasswordHashing.gif)
+
+An example plaintext file is displayed below:
+
+```
+bob:salt:B305CADBB3BCE54F3AA59C64FEC00DEA
+easy:salt:8A3F7799B5167EA29EE7B17FB967DC04
+hard:salt:D71EE0ECD72033250E982BC3C6013D0D
+difficult:salt:B931D5031D155DCF03750A0131EC316F
+```
+
+The plaintext file must be called `credentials.txt` and have the following format:
+
+```
+<username>:<salt_value>:<hashed_password>
+```
+
+The salting method used is: 
+
+```
+hashed_password(password + salt)
+```
