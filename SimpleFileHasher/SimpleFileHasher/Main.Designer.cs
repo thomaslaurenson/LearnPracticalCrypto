@@ -148,7 +148,7 @@
             this.Controls.Add(this.hashAlgorithmSelection);
             this.Controls.Add(this.label1);
             this.Name = "Main";
-            this.Text = "FileHasher";
+            this.Text = "SimpleFileHasher";
             this.ResumeLayout(false);
             this.PerformLayout();
 
